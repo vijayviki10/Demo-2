@@ -54,7 +54,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 
-function DrawerAppBar (){
+function Header (){
 return(<> 
 
 
@@ -90,6 +90,6 @@ return(<>
 
 </>)} 
 
-export default DrawerAppBar
+export default Header
 
 

@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import DrawerAppBar from './Components/Header';
+import Header from './Components/Header';
 import Content from './Components/Content';
 import Account from "./Components/Account";
 import Cart from "./Components/Cart";
@@ -14,7 +14,7 @@ function App() {
     
     <>
       
-    <DrawerAppBar/>
+    <Header/>
 
     <Routes>
 
@@ -28,7 +28,7 @@ function App() {
     
    <Counter></Counter>
    <Demo></Demo>
-   <Button variant="contained">Contained</Button>
+  
 
     
     
