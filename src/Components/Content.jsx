@@ -11,12 +11,13 @@ return(<Box>
 
 
 <Routes>
-
 <Route path="/cart" element={<Cart/>}></Route>
-<Route path="/Account" element={<Account/>}></Route>
+<Route path="/account" element={<Account/>}></Route>
 <Route path="/contact" element={<Contact/>}></Route>
-
 </Routes>
+
+
+
 
 
 

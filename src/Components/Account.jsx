@@ -5,6 +5,7 @@ function Account (){
       <p>You clicked Account</p>
     </>
   );
+  
 }
 
 export default Account;

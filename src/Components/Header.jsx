@@ -9,6 +9,11 @@ import ContactMailIcon from "@mui/icons-material/ContactMail";
 import CheckroomIcon from '@mui/icons-material/Checkroom';
 import { DingtalkOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
+import { useContext } from 'react';
+import { Context } from "./Context";
+import LogoutIcon from '@mui/icons-material/Logout';
+import { LoginContext } from "../Pages/LoginContext";
+
 
 
 let Search = styled('div')(({ theme }) => ({
@@ -22,8 +27,7 @@ let Search = styled('div')(({ theme }) => ({
   width: '100%',
   [theme.breakpoints.up('sm')]: {
     marginLeft: theme.spacing(1),
-    width: 'auto',
-  },
+    width: 'auto',},
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -55,6 +59,18 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
 function Header (){
+
+let {setLoggedIn}=useContext(LoginContext)
+
+function logout (){
+
+  setLoggedIn(false)
+}
+
+const { count } = useContext(Context);
+
+
+
 return(<> 
 
 
@@ -69,8 +85,9 @@ return(<>
 </Link>
 
 
-<Box style={{display :"flex", width : "320px",justifyContent : "space-between", position: "fixed",left:"1180px"}}>
-  <Button component={Link} to="/cart" style={{backgroundColor : "white" , color:"black"}} endIcon={<ShoppingCartIcon />}>Cart</Button>
+<Box style={{display :"flex", width : "340px",justifyContent : "space-between", position: "fixed",left:"1180px"}}>
+  <LogoutIcon onClick={logout}/>
+  <Button component={Link} to="/cart" style={{backgroundColor : "white" , color:"black"}} endIcon={<ShoppingCartIcon />}><Badge badgeContent={count} color="primary" max={999}>Cart</Badge></Button>
   <Button component={Link} to="/account" style={{backgroundColor : "white" , color:"black"}} endIcon={<AccountCircleIcon />}>Account</Button>
   <Button component={Link} to="/contact" style={{backgroundColor : "white" , color:"black"}} endIcon={<ContactMailIcon />}>Contact</Button>
 </Box>
